@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Café — Animated Webpage</title>
+  <meta name="description" content="A small café landing page showcasing CSS transitions, @keyframes animations and Animate.css." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Animate.css library (ready-made animation classes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Page-load progress bar: custom @keyframes "grow" -->
+  <div class="load-bar" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#" class="logo">Bloom<span>.</span></a>
+    <nav>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#visit" class="nav-link">Visit</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+
+      <div class="hero-text">
+        <!-- Animate.css classes -->
+        <p class="eyebrow animate__animated animate__fadeInDown">Est. 2019 · Small-batch coffee</p>
+        <!-- Custom @keyframes: letters slide up one by one -->
+        <h1 class="title" aria-label="Fresh coffee, slow mornings.">
+          <span class="word">Fresh</span> <span class="word">coffee,</span><br />
+          <span class="word">slow</span> <span class="word accent">mornings.</span>
+        </h1>
+        <p class="lead fade-in" style="--delay: 0.9s">
+          Hand-roasted beans, warm pastries and a sunny corner seat waiting just for you.
+        </p>
+        <div class="hero-actions fade-in" style="--delay: 1.1s">
+          <a href="#menu" class="btn btn-primary">See the menu</a>
+          <a href="#visit" class="btn btn-ghost">Find us →</a>
+        </div>
+      </div>
+
+      <div class="cup-wrap fade-in" style="--delay: 0.5s" aria-hidden="true">
+        <div class="steam"><span></span><span></span><span></span></div>
+        <div class="cup">
+          <div class="coffee"></div>
+        </div>
+        <div class="saucer"></div>
+      </div>
+
+      <a href="#menu" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="section">
+      <h2 class="section-title reveal">Today's favourites</h2>
+      <p class="section-sub reveal">Hover a card to see the transition effects.</p>
+
+      <div class="cards">
+        <article class="card reveal slide-left" style="--delay: 0s">
+          <div class="card-icon">☕</div>
+          <h3>Classic Latte</h3>
+          <p>Double espresso with silky steamed milk.</p>
+          <span class="price">$4.50</span>
+        </article>
+        <article class="card reveal slide-up" style="--delay: 0.15s">
+          <div class="card-icon">🥐</div>
+          <h3>Butter Croissant</h3>
+          <p>Flaky, golden and baked every morning.</p>
+          <span class="price">$3.25</span>
+        </article>
+        <article class="card reveal slide-right" style="--delay: 0.3s">
+          <div class="card-icon">🍵</div>
+          <h3>Matcha Cloud</h3>
+          <p>Ceremonial matcha topped with oat foam.</p>
+          <span class="price">$5.00</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="about-text reveal slide-left">
+        <h2 class="section-title left">Roasted with love</h2>
+        <p>We source beans directly from three family farms and roast in small batches every Tuesday. Every cup is brewed to order — no shortcuts, no rush.</p>
+        <ul class="stats">
+          <li><strong class="counter" data-target="12">0</strong><span>origins</span></li>
+          <li><strong class="counter" data-target="350">0</strong><span>cups a day</span></li>
+          <li><strong class="counter" data-target="7">0</strong><span>years</span></li>
+        </ul>
+      </div>
+      <div class="about-badge reveal zoom" aria-hidden="true">
+        <svg class="badge-ring" viewBox="0 0 200 200">
+          <defs><path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+          <circle cx="100" cy="100" r="98" />
+          <text><textPath href="#circle">FRESHLY ROASTED · SMALL BATCH · SINCE 2019 ·</textPath></text>
+        </svg>
+        <div class="badge-center">🌸</div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section id="visit" class="section visit">
+      <div class="visit-card reveal">
+        <h2 class="section-title">Come say hello</h2>
+        <p>12 Blossom Lane · Open daily 7am – 5pm</p>
+        <!-- Animate.css triggered on click via JS -->
+        <button class="btn btn-primary" id="wiggle-btn">Reserve a table</button>
+        <p class="toast" id="toast" role="status" hidden>See you soon! 🌸</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with CSS transitions, @keyframes & Animate.css.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
